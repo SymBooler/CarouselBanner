@@ -59,7 +59,7 @@ final class CarouselView: UIView, NibOwnerLoadable {
     override func didMoveToWindow() {
         
         let beginIndex = stackView.arrangedSubviews.count / 2
-        scrollView.contentOffset.x = CGFloat(beginIndex) * scrollView.width
+        scrollView.contentOffset.x = CGFloat(beginIndex) * scrollView.frame.size.width
     }
     
     func createImageViews() {
@@ -124,20 +124,20 @@ final class CarouselView: UIView, NibOwnerLoadable {
         if let timer = self.timer {
             timer.fire()
         } else {
-            let timer = Timer(timeInterval: 2.0, block: { [weak self] (timer) in
-                guard let strongSelf = self else {
-                    return
-                }
-                let offset = strongSelf.scrollView.contentOffset
-                var offsetX = (offset.x + strongSelf.pageWidth())
-                if offsetX >= strongSelf.scrollView.contentSize.width, !strongSelf.cycleScroll {
-                    offsetX = 0
-                    strongSelf.resetImageViewsForAutoPaging()
-                }
-                strongSelf.beginOffsetX = offset.x
-                strongSelf.targetOffsetX = offsetX
-                strongSelf.scrollView.setContentOffset(CGPoint(x: offsetX, y: offset.y), animated: true)
-                }, repeats: true)
+            let timer = Timer(timeInterval: 2.0, repeats: true) { [weak self] (timer) in
+            guard let strongSelf = self else {
+                return
+            }
+            let offset = strongSelf.scrollView.contentOffset
+            var offsetX = (offset.x + strongSelf.pageWidth())
+            if offsetX >= strongSelf.scrollView.contentSize.width, !strongSelf.cycleScroll {
+                offsetX = 0
+                strongSelf.resetImageViewsForAutoPaging()
+            }
+            strongSelf.beginOffsetX = offset.x
+            strongSelf.targetOffsetX = offsetX
+            strongSelf.scrollView.setContentOffset(CGPoint(x: offsetX, y: offset.y), animated: true)
+            }
             RunLoop.main.add(timer, forMode: .default)
             self.timer = timer
         }
@@ -173,7 +173,7 @@ extension CarouselView: UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         stopAutoPaging(byUser: false)
-        beginOffsetX = round(scrollView.contentOffset.x / scrollView.width) * scrollView.width
+        beginOffsetX = round(scrollView.contentOffset.x / scrollView.frame.size.width) * scrollView.frame.size.width
         initOffsetForCycle = false
     }
     
@@ -181,7 +181,7 @@ extension CarouselView: UIScrollViewDelegate {
         
         if cycleScroll, initOffsetForCycle {
             let beginIndex = stackView.arrangedSubviews.count / 2
-            scrollView.contentOffset.x = CGFloat(beginIndex) * scrollView.width
+            scrollView.contentOffset.x = CGFloat(beginIndex) * scrollView.frame.size.width
             return
         }
         if abs(scrollView.contentOffset.x - targetOffsetX) < 0.5, targetOffsetX >= 0 {
@@ -288,9 +288,9 @@ extension CarouselView: UIScrollViewDelegate {
     func pageWidth() -> CGFloat {
         
         if parallax {
-            return scrollView.width / (1 + offsetRate);
+            return scrollView.frame.size.width / (1 + offsetRate);
         }
-        return scrollView.width
+        return scrollView.frame.size.width
     }
     
     func resetImageViews(fromIndex: Int, toIndex: Int, imageIndex: Int) {
@@ -303,7 +303,7 @@ extension CarouselView: UIScrollViewDelegate {
         if imageIndex < imageNames.count {
             imageView.image = UIImage(named: imageNames[imageIndex])
         }
-        scrollView.contentOffset = CGPoint(x: CGFloat(stackView.arrangedSubviews.count / 2) * scrollView.width, y: 0)
+        scrollView.contentOffset = CGPoint(x: CGFloat(stackView.arrangedSubviews.count / 2) * scrollView.frame.size.width, y: 0)
         imageViewSwapped = true
     }
     
@@ -345,7 +345,7 @@ extension CarouselView: UIScrollViewDelegate {
         }
         if !imageViewSwapped {
 //            let p = (page + pageControl.numberOfPages) % pageControl.numberOfPages
-            scrollView.contentOffset.x = CGFloat(page) * scrollView.width
+            scrollView.contentOffset.x = CGFloat(page) * scrollView.frame.size.width
         }
         
         guard let imageView = imageView(page: page, movePage: movePage) else {
@@ -372,11 +372,11 @@ extension CarouselView: UIScrollViewDelegate {
     }
     
     func resetOffset(page: Int) {
-        scrollView.contentOffset.x = CGFloat(page) * scrollView.width
+        scrollView.contentOffset.x = CGFloat(page) * scrollView.frame.size.width
     }
     
     func needReset(x: CGFloat) -> Bool {
-        return Int(x / scrollView.width) == stackView.arrangedSubviews.count / 2
+        return Int(x / scrollView.frame.size.width) == stackView.arrangedSubviews.count / 2
     }
 }
 
