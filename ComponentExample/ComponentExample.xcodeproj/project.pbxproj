@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -99,13 +99,15 @@
 				0F003C1B53EA0EB0549EC19C /* Pods-abs_name-ComponentExample.debug.xcconfig */,
 				89E8CE9F36B07D46214AE3B0 /* Pods-abs_name-ComponentExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		FD13EF5F23603CBE00F772DD = {
 			isa = PBXGroup;
 			children = (
+				FD5130E4236AD4DB00337567 /* UI */,
+				FD5130DE236ACEDB00337567 /* Extensions */,
+				FD5130DD236ACECD00337567 /* Utils */,
 				FD13EF9C23603D7B00F772DD /* CarouselBanner */,
 				FD13EF6A23603CBF00F772DD /* ComponentExample */,
 				FD13EF8123603CC100F772DD /* ComponentExampleTests */,
@@ -173,6 +175,27 @@
 				FD13EF9D23603E2B00F772DD /* CarouselView.xib */,
 			);
 			path = CarouselBanner;
+			sourceTree = "<group>";
+		};
+		FD5130DD236ACECD00337567 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FD5130DE236ACEDB00337567 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD5130E4236AD4DB00337567 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

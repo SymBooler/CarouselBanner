@@ -12,8 +12,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Hello World")
-            Text("I am World")
-        }
+            Spacer(minLength: 1).frame(width: nil, height: 100, alignment: .center)
+            Text("I am Symbool").overlay(Circle().path(in: CGRect(x: 0, y: 0, width: 100, height: 100)))
+            Circle().stroke(lineWidth: 5).foregroundColor(.orange)
+            }
     }
 }
 

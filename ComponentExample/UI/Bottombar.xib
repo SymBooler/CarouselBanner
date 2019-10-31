@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Bottombar" customModule="MeetStar" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundHeight" destination="0Y1-Qy-ml3" id="0Ha-Mp-s2M"/>
+                <outlet property="backgroundView" destination="Iee-60-HmR" id="8Qy-Hm-dmU"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="sqS-mE-Mlm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view tag="100" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iee-60-HmR">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="163"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-yc-P99" userLabel="separator">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
+                    <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="H4x-gs-3NR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Iee-60-HmR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="0Y1-Qy-ml3"/>
+                <constraint firstItem="ZfZ-yc-P99" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5MT-ur-5zG"/>
+                <constraint firstAttribute="top" secondItem="ZfZ-yc-P99" secondAttribute="top" id="CyC-aM-fuJ"/>
+                <constraint firstAttribute="top" secondItem="Iee-60-HmR" secondAttribute="top" id="HMa-yz-mfi"/>
+                <constraint firstAttribute="trailing" secondItem="Iee-60-HmR" secondAttribute="trailing" id="MOt-3g-3Fr"/>
+                <constraint firstItem="ZfZ-yc-P99" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="jCf-q9-gY8"/>
+                <constraint firstItem="Iee-60-HmR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kB7-5F-R4s"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="352.56696428571428"/>
+        </view>
+    </objects>
+</document>
