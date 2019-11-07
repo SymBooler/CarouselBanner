@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/6/24.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import UIKit
 
 @objc class PresentCoverVerticalAnimator: NSObject, PresentAnimatorProtocol {
@@ -35,7 +35,7 @@ import UIKit
         let alpha = bgView?.alpha
         bgView?.alpha = 0
         let foreView = toVCProtocol.foregroundView
-        foreView?.transform = CGAffineTransform(translationX: 0, y: foreView?.frame.size.height ?? YYScreenSize().height / 2)
+        foreView?.transform = CGAffineTransform(translationX: 0, y: foreView?.frame.size.height ?? UIScreen.main.bounds.size.height / 2)
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             bgView?.alpha = alpha ?? 0.4
@@ -56,10 +56,11 @@ import UIKit
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             bgView?.alpha = 0
-            let transform = CGAffineTransform(translationX: 0, y: fgView?.frame.size.height ?? YYScreenSize().height / 2)
+            let transform = CGAffineTransform(translationX: 0, y: fgView?.frame.size.height ?? UIScreen.main.bounds.size.height / 2)
             fgView?.transform = transform
         }) { (completion) in
             transitionContext.completeTransition(completion)
         }
     }
 }
+*/

@@ -12,7 +12,7 @@ class SearchField: UITextField {
     
 //    lazy var leftSeparator: CALayer = {
 //        let layer = CALayer()
-//        layer.backgroundColor = UIColor(hexString: "#999999")?.cgColor
+//        layer.backgroundColor = UIColor(hex: "#999999")?.cgColor
 //        return layer
 //    }()
     lazy var leftIcon: UIImageView = {

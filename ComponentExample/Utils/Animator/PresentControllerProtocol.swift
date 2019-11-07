@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol PresentControllerProtocol {
-    @objc optional var backgroundView: UIView { get }
-    @objc optional var foregroundView: UIView { get }
-}
+//@objc protocol PresentControllerProtocol {
+//    @objc optional var backgroundView: UIView { get }
+//    @objc optional var foregroundView: UIView { get }
+//}

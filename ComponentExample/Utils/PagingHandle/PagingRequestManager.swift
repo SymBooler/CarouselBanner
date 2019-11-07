@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/9/25.
 //  Copyright © 2019 王超. All rights reserved.
 //
-
+/*
 import UIKit
 
 struct PagingListResponse {
@@ -51,7 +51,7 @@ class PagingRequestManager<PageModel: PagableRequestProtocol>: NSObject, Request
         })
         footer?.setTitle("到底了", for: .noMoreData)
         tableView.mj_footer = footer
-        tableView.autoHideMjFooter = true
+//        tableView.autoHideMjFooter = true
     }
 }
 
@@ -92,7 +92,7 @@ extension PagingRequestManager {
     
     func request(result: DataModel.Result, model: NetworkResultModel?, isReset: Bool) {
         
-        MBProgressHUD.hiddenHUD()
+//        MBProgressHUD.hiddenHUD()
         switch result {
         case .success:
             if isReset {
@@ -147,22 +147,22 @@ extension PagingRequestManager {
     func stopLoadingAnimationAndHide() {
         tableView.mj_header.endRefreshing()
         tableView.mj_footer?.endRefreshing()
-        tableView.pl_hidenDefaultView()
-        MBProgressHUD.hiddenHUD()
+//        tableView.pl_hidenDefaultView()
+//        MBProgressHUD.hiddenHUD()
     }
     
     func checkNoneData() {
         if response.allData.count <= 0 {
-            tableView.showDefaultViewForNoContent()
+//            tableView.showDefaultViewForNoContent()
         }
     }
     
     func handleNetworkError() {
-        if response.allData.count <= 0 {
-            tableView.showDefaultViewForNetworkError(refreshBlock: { [weak self] in
-                self?.tableView.mj_header.beginRefreshing()
-            })
-        }
+//        if response.allData.count <= 0 {
+//            tableView.showDefaultViewForNetworkError(refreshBlock: { [weak self] in
+//                self?.tableView.mj_header.beginRefreshing()
+//            })
+//        }
     }
     
     func checkMjfooter(_ model: PageModel) {
@@ -176,7 +176,7 @@ extension PagingRequestManager {
 
 extension PagingRequestManager {
     func enableLoading(enable: Bool = false) {
-        tableView.ignoreAutoHideMjFooter = !enable
+//        tableView.ignoreAutoHideMjFooter = !enable
         tableView.mj_header?.isHidden = !enable
         tableView.mj_footer?.isHidden = !enable
         if enable {
@@ -184,3 +184,4 @@ extension PagingRequestManager {
         }
     }
 }
+*/

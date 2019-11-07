@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/9/27.
 //  Copyright © 2019 王超. All rights reserved.
 //
-
+/*
 import UIKit
 
 class StaticInfo: NSObject {
@@ -66,3 +66,4 @@ struct Platform {
         return isSim
     }()
 }
+*/

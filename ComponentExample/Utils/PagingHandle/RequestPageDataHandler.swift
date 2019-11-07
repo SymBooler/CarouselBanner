@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/6/14.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import UIKit
 
 @objc class RequestPageDataHandler: NSObject {
@@ -42,7 +42,7 @@ import UIKit
         })
         footer?.setTitle("到底了", for: .noMoreData)
         tableView.mj_footer = footer
-        tableView.autoHideMjFooter = true
+//        tableView.autoHideMjFooter = true
         return handler
     }
 
@@ -214,3 +214,4 @@ extension RequestPageDataHandler {
         }
     }
 }
+*/

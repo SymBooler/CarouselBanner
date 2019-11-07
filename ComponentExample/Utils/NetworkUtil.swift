@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AFNetworking
 
 //MARK:- API
 public struct API {
@@ -42,12 +43,12 @@ public struct API {
     
     private mutating func initHttpHeaders() {
         header = ["Content-Type": "application/json", "app-pums-source": "ios"]
-        if let version = UIApplication.shared.appVersion {
-            header["app-pums-version"] = version
-        }
-        if let token = StaticInfo.shared.userToken {
-            header[SessionConst.HTTPHeaderForTokenKey] = token
-        }
+//        if let version = UIApplication.shared.appVersion {
+//            header["app-pums-version"] = version
+//        }
+//        if let token = StaticInfo.shared.userToken {
+//            header[SessionConst.HTTPHeaderForTokenKey] = token
+//        }
     }
 }
 //MARK:- NetworkUtil
@@ -64,9 +65,9 @@ open class NetworkUtil: NSObject {
             rs.setValue(userToken, forHTTPHeaderField: SessionConst.HTTPHeaderForTokenKey)
         }
         
-        if let version = UIApplication.shared.appVersion {
-            rs.setValue(version, forHTTPHeaderField: "app-pums-version")
-        }
+//        if let version = UIApplication.shared.appVersion {
+//            rs.setValue(version, forHTTPHeaderField: "app-pums-version")
+//        }
         
         if let h = headers {
             for (header, value) in h {
@@ -102,9 +103,9 @@ open class NetworkUtil: NSObject {
             rs.setValue(userToken, forHTTPHeaderField: SessionConst.HTTPHeaderForTokenKey)
         }
         
-        if let version = UIApplication.shared.appVersion {
-            rs.setValue(version, forHTTPHeaderField: "app-pums-version")
-        }
+//        if let version = UIApplication.shared.appVersion {
+//            rs.setValue(version, forHTTPHeaderField: "app-pums-version")
+//        }
         
         if let h = headers {
             for (header, value) in h {
@@ -170,9 +171,9 @@ open class NetworkUtil: NSObject {
                     message = error
                     responseResult["data"] = res
                 }
-                if !YYReachability().isReachable {
-                    message = "网络已断开，请检查网络"
-                }
+//                if !YYReachability().isReachable {
+//                    message = "网络已断开，请检查网络"
+//                }
                 responseResult["msg"] = message
                 let ne = NetworkError(httpCode: r.statusCode, info: NetworkResultModel(from: responseResult))
                 completionHandler(.failure(ne))

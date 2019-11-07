@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/5/17.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import UIKit
 
 class CustomPresentTransition: NSObject {
@@ -74,19 +74,19 @@ extension CustomPresentTransition: UIViewControllerAnimatedTransitioning {
 extension CustomPresentTransition: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        perform(#selector(wakeupMainThread), afterDelay: 0.01)
+        perform(#selector(wakeupMainThread), with: nil, afterDelay: 0.01)
         return self
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        debugPrint("AlertController:// animationController forDismissed \(Date().timeIntervalSince(AlertController.date as Date))")
-        perform(#selector(wakeupMainThread), afterDelay: 0.01)
+        perform(#selector(wakeupMainThread), with: nil, afterDelay: 0.01)
         return self
     }
     
     @objc func wakeupMainThread() {
         
-        dispatch_sync_on_main_queue {
+        DispatchQueue.main.async {
             debugPrint()
         }
     }
@@ -133,7 +133,7 @@ extension CustomPresentTransition {
         let alpha = bgView?.alpha
         bgView?.alpha = 0
         let foreView = toVCProtocol.foregroundView
-        foreView?.transform = CGAffineTransform(translationX: 0, y: foreView?.frame.size.height ?? YYScreenSize().height / 2)
+        foreView?.transform = CGAffineTransform(translationX: 0, y: foreView?.frame.size.height ?? UIScreen.main.bounds.size.height / 2)
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             bgView?.alpha = alpha ?? 0.4
@@ -170,7 +170,7 @@ extension CustomPresentTransition {
         
         UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             bgView?.alpha = 0
-            let transform = CGAffineTransform(translationX: 0, y: fgView?.frame.size.height ?? YYScreenSize().height / 2)
+            let transform = CGAffineTransform(translationX: 0, y: fgView?.frame.size.height ?? UIScreen.main.bounds.size.height / 2)
             fgView?.transform = transform
         }) { (completion) in
             transitionContext.completeTransition(completion)
@@ -190,3 +190,4 @@ extension CustomPresentTransition {
     case coverVertical
     case dismissVertical
 }
+*/

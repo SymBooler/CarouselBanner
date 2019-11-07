@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/6/14.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import Foundation
 
 protocol RequestPageDataProtocolSwift {
@@ -50,3 +50,4 @@ protocol RequestPageDataResultProtocol {
     
     func result(response: PagingListResponse)
 }
+*/

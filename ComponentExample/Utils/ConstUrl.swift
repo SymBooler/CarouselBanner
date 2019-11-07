@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/7/24.
 //  Copyright © 2019 王超. All rights reserved.
 //
-
+/*
 import Foundation
 
 class ConstUrl: NSObject {
@@ -314,3 +314,4 @@ extension ConstUrl {
         }
     }
 }
+*/

@@ -5,13 +5,8 @@
 //  Created by 张广路 on 2019/4/26.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
-import Foundation
-
-extension LoginViewModel {
-    @objc public static let userName = "userName"
-    @objc public static let password = "password"
-}
+/*
+import UIKit
 
 class NotificationConst: NSObject {
     @objc public static let BackFromAssignUserController = "BackFromAssignUserController"
@@ -33,25 +28,25 @@ class SessionConst: NSObject {
 
 class ColorConst: NSObject {
     @objc public static var theme: UIColor {
-        return UIColor(hexString: "#1D85FE") ?? UIColor(red: 70/255.0, green: 86/255.0, blue: 251/255.0, alpha: 1.0)
+        return UIColor(hex: "#1D85FE")
     }
     @objc public static var normal: UIColor {
-        return UIColor(hexString: "#C7C7C7") ?? UIColor(red: 199/255.0, green: 199/255.0, blue: 199/255.0, alpha: 1.0)
+        return UIColor(hex: "#C7C7C7")
     }
     @objc public static var disable: UIColor {
-        return UIColor(hexString: "#999999") ?? UIColor(red: 153/255.0, green: 153/255.0, blue: 153/255.0, alpha: 1.0)
+        return UIColor(hex: "#999999")
     }
     @objc public static var background: UIColor {
-        return UIColor(hexString: "#F5F5F5") ?? UIColor(red: 245/255.0, green: 245/255.0, blue: 245/255.0, alpha: 1.0)
+        return UIColor(hex: "#F5F5F5")
     }
     @objc public static var textNormal: UIColor {
-        return UIColor(hexString: "#444444") ?? UIColor(red: 68/255.0, green: 68/255.0, blue: 68/255.0, alpha: 1.0)
+        return UIColor(hex: "#444444")
     }
     @objc public static var textNormalLight: UIColor {
-        return UIColor(hexString: "#666666") ?? UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0)
+        return UIColor(hex: "#666666")
     }
     @objc public static var separator: UIColor {
-        return UIColor(hexString: "#e4e4e4") ?? UIColor(red: 228/255.0, green: 228/255.0, blue: 228/255.0, alpha: 1.0)
+        return UIColor(hex: "#e4e4e4")
     }
 }
 
@@ -74,3 +69,4 @@ class EncryptUtil {
     @objc public static let cryptoVector = "123456789qazwsxe"
     #endif
 }
+*/

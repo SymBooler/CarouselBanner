@@ -22,25 +22,25 @@ class ValidUtil {
         }
         return str.validatePassword()
     }
-    @discardableResult
-    public static func validate(passwords: String?...) -> Bool {
-        for pwd in passwords {
-            switch pwd?.validatePassword() {
-            case .none, .none?:
-                MBProgressHUD.showMessage("密码不能为空")
-                return false
-            case .format?, .length?:
-                MBProgressHUD.showMessage("密码格式不对")
-                return false
-            default:
-                break
-            }
-        }
-        if passwords.count == 2, passwords.first != passwords[1] {
-            MBProgressHUD.showMessage("两次密码输入不一致")
-            return false
-        }
-        
-        return true
-    }
+//    @discardableResult
+//    public static func validate(passwords: String?...) -> Bool {
+//        for pwd in passwords {
+//            switch pwd?.validatePassword() {
+//            case .none, .none?:
+//                MBProgressHUD.showMessage("密码不能为空")
+//                return false
+//            case .format?, .length?:
+//                MBProgressHUD.showMessage("密码格式不对")
+//                return false
+//            default:
+//                break
+//            }
+//        }
+//        if passwords.count == 2, passwords.first != passwords[1] {
+//            MBProgressHUD.showMessage("两次密码输入不一致")
+//            return false
+//        }
+//        
+//        return true
+//    }
 }

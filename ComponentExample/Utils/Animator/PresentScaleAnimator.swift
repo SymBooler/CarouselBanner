@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/6/24.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import UIKit
 
 @objc class PresentScaleAnimator: NSObject, PresentAnimatorProtocol {
@@ -65,3 +65,4 @@ import UIKit
         }
     }
 }
+*/

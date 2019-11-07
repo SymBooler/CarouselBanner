@@ -8,12 +8,12 @@
 
 import Foundation
 
-class MJRefreshHeaderBridge: NSObject {
-    static func createHeader(refreshingBlock: MJRefreshComponentRefreshingBlock!) -> MSRefreshHeader {
-        return MSRefreshHeader(refreshingBlock: refreshingBlock)
-    }
-    
-    static func createHeader(refreshingTarget: Any!, refreshingAction: Selector!) -> MSRefreshHeader {
-        return MSRefreshHeader(refreshingTarget: refreshingTarget, refreshingAction: refreshingAction)
-    }
-}
+//class MJRefreshHeaderBridge: NSObject {
+//    static func createHeader(refreshingBlock: MJRefreshComponentRefreshingBlock!) -> MSRefreshHeader {
+//        return MSRefreshHeader(refreshingBlock: refreshingBlock)
+//    }
+//    
+//    static func createHeader(refreshingTarget: Any!, refreshingAction: Selector!) -> MSRefreshHeader {
+//        return MSRefreshHeader(refreshingTarget: refreshingTarget, refreshingAction: refreshingAction)
+//    }
+//}

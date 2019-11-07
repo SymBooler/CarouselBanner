@@ -5,7 +5,7 @@
 //  Created by 张广路 on 2019/10/10.
 //  Copyright © 2019 王超. All rights reserved.
 //
-
+/*
 import UIKit
 
 class ShareViewController: UIViewController {
@@ -61,23 +61,23 @@ class ShareViewController: UIViewController {
             list.append(.Weibo)
             return
         }
-        if let umManger = UMSocialManager.default() {
-            if umManger.isInstall(.wechatSession) {
-                list.append(.WeiXin)
-            }
-            if umManger.isInstall(.wechatTimeLine) {
-                list.append(.PengYouQuan)
-            }
-            list.append(.Weibo)
-        }
+//        if let umManger = UMSocialManager.default() {
+//            if umManger.isInstall(.wechatSession) {
+//                list.append(.WeiXin)
+//            }
+//            if umManger.isInstall(.wechatTimeLine) {
+//                list.append(.PengYouQuan)
+//            }
+//            list.append(.Weibo)
+//        }
     }
     
     func collectionViewConfig() {
         
         if list.count == 1 {
-            collectionViewLeading.constant = (YYScreenSize().width - flowLayout.itemSize.width) / 2
+            collectionViewLeading.constant = (UIScreen.main.bounds.size.width - flowLayout.itemSize.width) / 2
         } else {
-            let spacing = floor(YYScreenSize().width - 40 - flowLayout.itemSize.width * CGFloat(list.count))
+            let spacing = floor(UIScreen.main.bounds.size.width - 40 - flowLayout.itemSize.width * CGFloat(list.count))
             flowLayout.minimumInteritemSpacing = spacing / CGFloat((list.count - 1))
         }
         
@@ -132,3 +132,4 @@ extension ShareViewController: PresentControllerProtocol {
         }
     }
 }
+*/

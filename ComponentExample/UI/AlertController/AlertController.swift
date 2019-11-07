@@ -5,8 +5,9 @@
 //  Created by 张广路 on 2019/5/17.
 //  Copyright © 2019 Redstar. All rights reserved.
 //
-
+/*
 import UIKit
+import Hue
 
 class AlertController: UIViewController {
     
@@ -38,8 +39,8 @@ class AlertController: UIViewController {
     var isMultiMode = false
     var itemTitles =  [String]()
     var callback: ((Int, String) -> Void)?
-    var tintColor = UIColor(hexString: "#1D85FE")
-    var normalColor = UIColor(hexString: "#666666")
+    var tintColor = UIColor(hex: "#1D85FE")
+    var normalColor = UIColor(hex: "#666666")
     
     @objc var cancelAction: AlertAction? = AlertAction(title: "取消", style: .cancel, handler: nil) {
         didSet {
@@ -190,10 +191,7 @@ class AlertController: UIViewController {
         }
         tableHeightConstraint.constant = height
         actionSheetContainer.layoutIfNeeded()
-        
-        let gesture = UITapGestureRecognizer { [weak self] (gesture) in
-            self?.actionSheetDismiss()
-        }
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(bgViewTapped))
         bgView.addGestureRecognizer(gesture)
     }
     
@@ -202,6 +200,10 @@ class AlertController: UIViewController {
         dismiss(animated: true) {
             completion()
         }
+    }
+    
+    @objc func bgViewTapped() {
+        actionSheetDismiss()
     }
 }
 
@@ -220,12 +222,12 @@ extension AlertController {
 //            button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
 //            switch action.style {
 //            case .confirm:
-//                button.setTitleColor(UIColor(hexString: "#25B5C6"), for: .normal)
+//                button.setTitleColor(UIColor(hex: "#25B5C6"), for: .normal)
 //            default:
-//                button.setTitleColor(UIColor(hexString: "#666666"), for: .normal)
+//                button.setTitleColor(UIColor(hex: "#666666"), for: .normal)
 //            }
 //        }
-        titleLabel.textColor = UIColor(hexString: "#666666")
+        titleLabel.textColor = UIColor(hex: "#666666")
         titleLabel?.font = UIFont.systemFont(ofSize: 15)
         titleLabel.text = title
         alertContainerView.layer.cornerRadius = 4
@@ -270,7 +272,7 @@ extension AlertController {
         
         for _ in 0 ..< alertActions.count - 1 {
             let separatorView = UIView(frame: CGRect.zero)
-            separatorView.backgroundColor = UIColor(hexString: "#E4E4E4")
+            separatorView.backgroundColor = UIColor(hex: "#E4E4E4")
             actionContainer.addSubview(separatorView)
             separatorViews.append(separatorView)
         }
@@ -373,14 +375,14 @@ extension AlertController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AlertController.reuseIdentifier) else { return UITableViewCell(style: .default, reuseIdentifier: AlertController.reuseIdentifier) }
         
-        cell.textLabel?.textColor = UIColor(hexString: "#444444")
+        cell.textLabel?.textColor = UIColor(hex: "#444444")
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
         cell.textLabel?.textAlignment = .center
         cell.selectionStyle = .none
         switch indexPath.section {
         case 1:
             cell.textLabel?.text = cancelAction?.title
-            cell.textLabel?.textColor = UIColor(hexString: "#666666")
+            cell.textLabel?.textColor = UIColor(hex: "#666666")
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: CGFloat.greatestFiniteMagnitude)
         default:
             if isMultiMode {
@@ -388,7 +390,7 @@ extension AlertController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 cell.textLabel?.text = alertActions[indexPath.row].title
                 if alertActions[indexPath.row].style == .destructive {
-                    cell.textLabel?.textColor = UIColor(hexString: "#E85043")
+                    cell.textLabel?.textColor = UIColor(hex: "#E85043")
                 }
             }
         }
@@ -465,4 +467,4 @@ extension AlertController: UITableViewDataSource, UITableViewDelegate {
         case destructive
     }
 }
-
+*/
